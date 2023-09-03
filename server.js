@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-const connectDb = require("./config/db");
+const connectDb = require("./config/dbConnection");
 
 connectDb();
 const app = express();
@@ -16,7 +16,7 @@ app.get("/about", (req, res) => {
     res.sendFile(path.join(__dirname, "\\Pages\\about.html"));
 });
 
-app.use("/users", require("./Routes/users"));
+app.use("/users", require("./Routes/userRoutes"));
 
 app.listen(3000, () => {
     console.log("connected to server on port 3000");
