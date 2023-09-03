@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const connectDb = require("./config/dbConnection");
+const dotenv = require('dotenv').config();
 
 connectDb();
 const app = express();
