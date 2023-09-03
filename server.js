@@ -1,20 +1,23 @@
 const express = require("express");
-const app = express();
 const path = require("path");
-const users = require("./Routes/users");
-const profile = require("./Routes/profile");
+const connectDb = require("./config/db");
+
+connectDb();
+const app = express();
 
 app.use(express.urlencoded());
 
-
 app.get("/", (req, res) => {
-    console.log(" server is responding as expexted _");
+    console.log("server is responding as expexted _");
     res.sendFile(path.join(__dirname, "index.html"));
 });
 
-app.use("/users", users);
-app.use("/profile", profile);
+app.get("/about", (req, res) => {
+    res.sendFile(path.join(__dirname, "\\Pages\\about.html"));
+});
+
+app.use("/users", require("./Routes/users"));
 
 app.listen(3000, () => {
-    console.log(" connected to server on port 3000");
+    console.log("connected to server on port 3000");
 });

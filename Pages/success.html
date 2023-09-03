@@ -4,11 +4,83 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            .navbar {
+                width: 100%;
+                height: 100px;
+                background-color: black;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+            .navbar-heading {
+                width: min-content;
+                flex-grow: 1;
+                padding-left: 20px;
+                font-size: xx-large;
+                color: white;
+                font-family: "Lucida Sans", "Lucida Sans Regular",
+                    "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana,
+                    sans-serif;
+            }
+            .navbar-heading a {
+                text-decoration: none;
+                cursor: pointer;
+                width: 200px;
+            }
+            .navbar-menu {
+                width: 20%;
+                height: 40px;
+                position: absolute;
+                right: 50px;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                padding: 10px;
+            }
+
+            .navbar-menu-item {
+                width: 70px;
+                height: 30px;
+                padding: 10px 5px 5px 5px;
+                border-radius: 50%;
+                background-color: white;
+                text-decoration: none;
+                color: black;
+                font-size: larger;
+                /* filter: blur(1px); */
+                transition: 100ms ease-in-out;
+                text-align: center;
+            }
+            .navbar-menu-item:hover {
+                padding-top: 5px;
+                background-color: yellowgreen;
+                cursor: pointer;
+                font-size: x-large;
+                transform: translateY(5px);
+                /* filter: blur(0); */
+            }
+        </style>
     </head>
     <body>
-        <center><h1 style="color: green">Login Success</h1></center>
-        <form action="/users/profiledata" method="post">
-            <input type="submit" value="profile" />
-        </form>
+        <div class="navbar">
+            <div class="navbar-heading">
+                <a>Company Name</a>
+            </div>
+            <div class="navbar-menu">
+                <a class="navbar-menu-item" href="/">Home</a>
+                <a class="navbar-menu-item" href="/about">About</a>
+            </div>
+        </div>
+        <div>
+            <center><h1 style="color: green">Login Success</h1></center>
+            <form action="/users/profiledata" method="post">
+                <input type="submit" value="profile" />
+            </form>
+        </div>
     </body>
 </html>

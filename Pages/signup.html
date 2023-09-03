@@ -75,11 +75,77 @@
                 <a class="navbar-menu-item" href="/">Home</a>
                 <a class="navbar-menu-item" href="/about">About</a>
                 <a class="navbar-menu-item" href="/users/login">Login</a>
-                <a class="navbar-menu-item" href="/users/register">SignUp</a>
+                <a class="navbar-menu-item" href="#">SignUp</a>
             </div>
         </div>
-        <div>
-            <center><h1>Authentication Failure</h1></center>
+        <div
+            style="
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 80vh;
+            "
+        >
+            <div
+                style="
+                    border: 1px solid black;
+                    border-radius: 15px;
+                    padding: 20px;
+                "
+            >
+                <form action="/users/register" method="post">
+                    <h1 style="position: relative; left: 20%">Sign Up</h1>
+                    <br />
+                    <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        placeholder="Name"
+                    />
+                    <br /><br />
+                    <input
+                        type="text"
+                        name="email"
+                        id="email"
+                        placeholder="Email address"
+                    />
+                    <br /><br />
+                    <input
+                        type="password"
+                        name="password"
+                        id="password"
+                        placeholder="Password"
+                    />
+                    <br /><br />
+                    <label for="role">Role: </label>
+                    <select name="role" id="role">
+                        <option>Select Role</option>
+                        <option value="user">User</option>
+                        <option value="admin">Admin</option>
+                        <option value="moderator">Moderator</option>
+                    </select>
+                    <br /><br />
+                    <input
+                        type="text"
+                        name="securityQuestion"
+                        id="securityQuestion"
+                        placeholder="Security question"
+                    />
+                    <br /><br />
+                    <input
+                        type="text"
+                        name="securityQuestionAnswer"
+                        id="securityQuestionAnswer"
+                        placeholder="Security question answer"
+                    />
+                    <br /><br />
+                    <input
+                        type="submit"
+                        value="Sign Up"
+                        style="position: relative; left: 50px"
+                    />
+                </form>
+            </div>
         </div>
     </body>
 </html>
